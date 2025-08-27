@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="style.css" />
+		<title>Login</title>
+	</head>
+	<body>
+		<div class="page">
+			<div class="sign-box">
+				<form action="">
+					<h1>Sign Up</h1>
+					<br /><br />
+					<label for="name">Full name</label>
+					<input
+						type="text"
+						name="name"
+						id="name"
+						placeholder="Your name here"
+						required
+					/>
+
+					<label for="email">Email</label>
+					<input
+						type="email"
+						name="email"
+						id="email"
+						placeholder="yaj@yaj.com"
+						required
+					/>
+
+					<div class="password-container">
+						<label for="password">Password</label>
+						<input
+							type="password"
+							id="password"
+							name="password"
+							placeholder="Password                                                                     👁️ "
+							required
+						/>
+						<span id="toggle-password" class="toggle-password">👁️</span>
+					</div>
+					<div class="password-container">
+						<label for="password">Re-password</label>
+						<input
+							type="password"
+							name="repassword"
+							id="repassword"
+							placeholder="Repeat password                                                        👁️"
+							required
+						/>
+					</div>
+
+					<button type="submit" class="signup-button">Sign Up</button>
+				</form>
+				<p style="position: relative">Or</p>
+				<button class="google-sign">Sign up with Google</button>
+				<p>
+					Already have an account?
+					<a style="color: #a97d6b" href="#">Sign in</a>
+				</p>
+			</div>
+		</div>
+		<script src="script.js"></script>
+	</body>
+</html>

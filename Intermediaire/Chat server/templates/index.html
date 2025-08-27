@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Chat Flask-SocketIO</title>
+		<script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+	</head>
+	<body>
+		<h2>Chat</h2>
+		<div id="messages"></div>
+		<input id="msg" placeholder="Écrire un message..." autocomplete="off" />
+		<button onclick="sendMessage()">Envoyer</button>
+
+		<script>
+			// Connexion au serveur Flask
+			const socket = io("http://localhost:5000");
+
+			socket.on("connect", () => {
+				console.log("✅ Connecté au serveur Flask");
+			});
+
+			socket.on("message", (data) => {
+				const messages = document.getElementById("messages");
+				const item = document.createElement("div");
+				item.textContent = data;
+				messages.appendChild(item);
+			});
+
+			function sendMessage() {
+				const msg = document.getElementById("msg").value;
+				socket.send(msg); // envoie au serveur Flask
+				document.getElementById("msg").value = "";
+			}
+		</script>
+	</body>
+</html>

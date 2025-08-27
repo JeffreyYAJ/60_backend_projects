@@ -1,0 +1,107 @@
+* {
+	margin: 0;
+	padding: 0;
+	font-family: Arial, Helvetica, sans-serif;
+	box-sizing: border-box;
+}
+
+body {
+	background: linear-gradient(to right, #c7a6a8, #b1b0c7);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+}
+
+.page {
+	width: 100%;
+	padding: 20px;
+}
+
+.sign-box {
+	background-color: aliceblue;
+	max-width: fit-content;
+	margin: auto;
+	padding: 30px;
+	border-radius: 10px;
+	text-align: center;
+	width: 70%;
+}
+
+.sign-box input {
+	width: 100%;
+	padding: 7px;
+	border-radius: 5px;
+	font-size: 12px;
+	font-weight: bold;
+	border: 2px solid #300831;
+	margin-bottom: 18px;
+}
+
+.sign-box input:focus {
+	outline: none;
+	border-color: blueviolet;
+}
+
+.sign-box button {
+	width: 100%;
+	padding: 8px;
+	font-size: 16px;
+	font-weight: 200;
+	color: aliceblue;
+	background: linear-gradient(to right, #b799c0, #43659c);
+	border-radius: 5px;
+	border: none;
+}
+
+.sign-box button:hover {
+	transition: 1s;
+	background: linear-gradient(to left, blue, red);
+}
+
+.page p {
+	margin: 10px;
+	font-size: 14px;
+	font-weight: 150;
+	color: #000000;
+}
+
+.toggle-password {
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	cursor: pointer;
+}
+
+.sign-box label {
+	position: absolute;
+	left: 10px;
+	top: 10px;
+	transition: all 0.2s ease;
+	color: #999;
+}
+
+input[type="text"]:focus + label,
+input[type="text"]:valid + label {
+	top: -10px; /* Déplace le label vers le haut */
+	font-size: 12px; /* Réduit la taille du texte */
+	color: #007bff; /* Change la couleur du label */
+}
+input[type="email"]:focus + label,
+input[type="email"]:valid + label {
+	top: -10px; /* Déplace le label vers le haut */
+	font-size: 12px; /* Réduit la taille du texte */
+	color: #007bff; /* Change la couleur du label */
+}
+input[type="password"]:focus + label,
+input[type="password"]:valid + label {
+	top: -10px; /* Déplace le label vers le haut */
+	font-size: 12px; /* Réduit la taille du texte */
+	color: #007bff; /* Change la couleur du label */
+}
+input[type="password"]:focus + label,
+input[type="password"]:valid + label {
+	top: -10px; /* Déplace le label vers le haut */
+	font-size: 12px; /* Réduit la taille du texte */
+	color: #007bff; /* Change la couleur du label */
+}

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Commentaire selon l'âge</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .container {
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        input, button {
+            padding: 8px;
+            margin: 5px 0;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #result {
+            margin-top: 15px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            background-color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+
+        <label for="age">Age :</label>
+        <input type="number" id="age" min="1" max="120" required>
+        <button onclick="getComment()">Verifier</button>
+
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function getComment() {
+            const age = parseInt(document.getElementById('age').value);
+            const resultDiv = document.getElementById('result');
+
+            if (isNaN(age) || age < 1 || age > 120) {
+                resultDiv.innerHTML = '<strong>Erreur :</strong> Veuillez entrer un âge valide entre 1 et 120 ans.';
+                resultDiv.style.color = 'red';
+                return;
+            }
+
+            let comment;
+
+            if (age >= 1 && age <= 6) {
+                comment = "Vous êtes un jeune enfant.";
+                resultDiv.style.color = 'green';
+            } else if (age >= 7 && age <= 11) {
+                comment = "Vous êtes un enfant qui a atteint l'âge de raison.";
+                resultDiv.style.color = 'blue';
+            } else if (age >= 12 && age <= 17) {
+                comment = "Vous êtes un adolescent.";
+                resultDiv.style.color = 'yellow';
+            } else {
+                comment = "Vous êtes un adulte.";
+                resultDiv.style.color = 'red';
+            }
+
+            resultDiv.textContent = comment;
+
+        }
+    </script>
+</body>
+</html>
