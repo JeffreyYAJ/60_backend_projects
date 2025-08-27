@@ -2,3 +2,5 @@ __pycache__
 instance
 *.yaj
 *.pyc
+test.py
+todo.yaj
